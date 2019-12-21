@@ -1,0 +1,36 @@
+#Hangman game
+
+def run_hangman(question, answerletters):
+    have_tries = True
+    fails = 0
+    maximum_fails = 2
+    score = 0
+    maximum_score = (len(answerletters))
+    while have_tries:
+        print(question)
+        answer = input("Put a lowercase letter: ")
+        if answer in answerletters:
+            print("You got the letter correctly!")
+            score = score +1
+            if score == maximum_score:
+                print("You have won the game!")
+                return
+        else:
+            if fails != 2:
+                fails = fails + 1
+                print("Wrong!")
+            else:
+                have_tries = False
+    print("You have lost.")
+    return
+#Put the question with the different missing  letters in the first slot of the parantheses, and the second slot is for the missing letters in lower case only.
+print(run_hangman("The_e is _o _ain without _ain", "rngp"))
+
+
+
+
+
+
+
+
+
